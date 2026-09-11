@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lina Rachez | Dossier Técnico</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .font-tech { font-family: 'Space Grotesk', sans-serif; }
+    .tab-btn.active {
+      background-color: #18181b;
+      color: #ffffff;
+      border-color: #18181b;
+    }
+  </style>
+</head>
+<body class="bg-[#f3f4f6] text-neutral-900 min-h-screen flex flex-col justify-between antialiased selection:bg-neutral-900 selection:text-white">
+
+  <!-- Top Bar Técnica -->
+  <header class="w-full bg-white border-b border-neutral-200 px-6 py-3.5 sticky top-0 z-50">
+    <div class="max-w-2xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-xs font-bold tracking-wider uppercase font-tech">Lina Rachez • Dossier Técnico</span>
+      </div>
+      <span class="text-[11px] font-semibold text-neutral-500 bg-neutral-100 border border-neutral-200 px-2.5 py-0.5 rounded-md">
+        Trayectoria Verificada
+      </span>
+    </div>
+  </header>
+
+  <!-- Dossier Central -->
+  <main class="flex-1 max-w-2xl mx-auto px-4 py-8 w-full space-y-6">
+
+    <!-- Header Perfil Tipo Ficha Ejecutiva -->
+    <section class="bg-white p-6 rounded-2xl border border-neutral-200/90 shadow-sm">
+      <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+        <div class="w-24 h-24 rounded-2xl overflow-hidden border border-neutral-200 shadow-md shrink-0 bg-neutral-100">
+          <img 
+            src="https://raw.githubusercontent.com/linahmgomez-lab/Negociaci-n-CierresOff-Market-Bogot-/main/perfil.jpg" 
+            alt="Lina Rachez" 
+            class="w-full h-full object-cover object-top"
+          />
+        </div>
+        <div class="text-center sm:text-left flex-1">
+          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-1">
+            <h1 class="text-2xl font-extrabold text-neutral-900 font-tech">Lina Rachez</h1>
+            <span class="text-[10px] bg-neutral-900 text-white font-bold px-2 py-0.5 rounded">Consultoría B2B</span>
+          </div>
+          <p class="text-xs font-semibold text-neutral-600">
+            Especialista en Mercado Bursátil, Gestión de Riesgos (SARLAFT) y Transacciones Inmobiliarias
+          </p>
+          <p class="text-[11px] text-neutral-400 mt-2 leading-relaxed">
+            Bogotá, Colombia • Trayectoria corporativa en entidades vigiladas por Superfinanciera y práctica internacional en EE. UU.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Métricas Clave en Grid Horizontal -->
+    <section class="grid grid-cols-4 gap-2 text-center">
+      <div class="bg-white p-3 rounded-xl border border-neutral-200/80 shadow-xs">
+        <span class="block text-base font-black text-neutral-900 font-tech">+15</span>
+        <span class="text-[9px] font-semibold text-neutral-500 uppercase">Años Exp.</span>
+      </div>
+      <div class="bg-white p-3 rounded-xl border border-neutral-200/80 shadow-xs">
+        <span class="block text-base font-black text-neutral-900 font-tech">BVC</span>
+        <span class="text-[9px] font-semibold text-neutral-500 uppercase">Mdo. Valores</span>
+      </div>
+      <div class="bg-white p-3 rounded-xl border border-neutral-200/80 shadow-xs">
+        <span class="block text-base font-black text-neutral-900 font-tech">SARLAFT</span>
+        <span class="text-[9px] font-semibold text-neutral-500 uppercase">Cumplimiento</span>
+      </div>
+      <div class="bg-white p-3 rounded-xl border border-neutral-200/80 shadow-xs">
+        <span class="block text-base font-black text-neutral-900 font-tech">IA / US</span>
+        <span class="text-[9px] font-semibold text-neutral-500 uppercase">Operaciones</span>
+      </div>
+    </section>
+
+    <!-- Selector de Pestañas Interactivo -->
+    <section class="space-y-4">
+      <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs font-bold scrollbar-none">
+        <button onclick="switchTab('bursatil')" id="tab-bursatil" class="tab-btn active px-3.5 py-2 rounded-xl border border-neutral-300 bg-white text-neutral-700 whitespace-nowrap transition-all">
+          1. Bolsa & Inversión
+        </button>
+        <button onclick="switchTab('seguros')" id="tab-seguros" class="tab-btn px-3.5 py-2 rounded-xl border border-neutral-300 bg-white text-neutral-700 whitespace-nowrap transition-all">
+          2. Seguros & Riesgos
+        </button>
+        <button onclick="switchTab('inmobiliario')" id="tab-inmobiliario" class="tab-btn px-3.5 py-2 rounded-xl border border-neutral-300 bg-white text-neutral-700 whitespace-nowrap transition-all">
+          3. Real Estate
+        </button>
+        <button onclick="switchTab('tech')" id="tab-tech" class="tab-btn px-3.5 py-2 rounded-xl border border-neutral-300 bg-white text-neutral-700 whitespace-nowrap transition-all">
+          4. IA & Operaciones
+        </button>
+      </div>
+
+      <!-- Panel 1: Bolsa de Valores e Interbolsa -->
+      <div id="content-bursatil" class="tab-content space-y-3">
+        <!-- Bolsa de Valores de Colombia -->
+        <div class="bg-white p-5 rounded-2xl border border-neutral-200/90 shadow-sm space-y-2">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded uppercase">Entidad Bursátil</span>
+              <h3 class="text-sm font-bold text-neutral-900 mt-1">Bolsa de Valores de Colombia (BVC)</h3>
+              <p class="text-[11px] text-neutral-500 font-medium">Analista Financiero y de Inversiones</p>
+            </div>
+            <div class="text-right shrink-0">
+              <span class="text-[11px] font-bold text-neutral-800 font-tech block">11 meses</span>
+              <span class="text-[10px] text-neutral-400 font-medium block">28 Ene 2011 – 31 Dic 2011</span>
+            </div>
+          </div>
+          <p class="text-xs text-neutral-600 leading-relaxed pt-1">
+            Apoyo operativo en la liquidación y compensación de operaciones Repo y administración de títulos valores. Responsable del control de garantías, conciliación diaria de cuentas y verificación de cumplimiento en las operaciones del mercado bursátil. Gestión de activos y otros tipos de banca de inversión.
+          </p>
+        </div>
+
+        <!-- Interbolsa -->
+        <div class="bg-white p-5 rounded-2xl border border-neutral-200/90 shadow-sm space-y-2">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded uppercase">Comisionista de Bolsa</span>
+              <h3 class="text-sm font-bold text-neutral-900 mt-1">Interbolsa</h3>
+              <p class="text-[11px] text-neutral-500 font-medium">Pasantía SENA • Back Office Bursátil</p>
+            </div>
+            <div class="text-right shrink-0">
+              <span class="text-[11px] font-bold text-neutral-800 font-tech block">1 año 10 meses</span>
+              <span class="text-[10px] text-neutral-400 font-medium block">4 Mar 2010 – 31 Dic 2011</span>
+            </div>
+          </div>
+          <p class="text-xs text-neutral-600 leading-relaxed pt-1">
+            Práctica formativa del SENA en el back office bursátil: soporte operativo en operaciones Repo, custodia de títulos y conciliación de garantías.
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 2: Seguros del Estado & Solidaria -->
+      <div id="content-seguros" class="tab-content hidden space-y-3">
+        <!-- Seguros del Estado -->
+        <div class="bg-white p-5 rounded-2xl border border-neutral-200/90 shadow-sm space-y-2">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="text-[10px] font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded uppercase">Aseguradora S.A.</span>
+              <h3 class="text-sm font-bold text-neutral-900 mt-1">Seguros del Estado S.A.</h3>
+              <p class="text-[11px] text-neutral-500 font-medium">Analista Técnico Comercial • Sucursal Niza</p>
+            </div>
+            <div class="text-right shrink-0">
+              <span class="text-[11px] font-bold text-neutral-800 font-tech block">4 años 3 meses</span>
+              <span class="text-[10px] text-neutral-400 font-medium block">1 Sep 2014 – 1 Dic 2018</span>
+            </div>
+          </div>
+          <p class="text-xs text-neutral-600 leading-relaxed pt-1">
+            Asesoría comercial y técnica en seguros de Autos, Vida, Fianzas y Generales. Acompañamiento a clientes directos e intermediarios en cotizaciones, cierre y expedición de pólizas, retención de clientes en renovaciones y de cartera de clientes uno a uno y corporativos, con control documental SARLAFT y cumplimiento normativo.
+          </p>
+        </div>
+
+        <!-- Aseguradora Solidaria -->
+        <div class="bg-white p-5 rounded-2xl border border-neutral-200/90 shadow-sm space-y-2">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="text-[10px] font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded uppercase">Aseguradora S.A.</span>
+              <h3 class="text-sm font-bold text-neutral-900 mt-1">Aseguradora Solidaria de Colombia</h3>
+              <p class="text-[11px] text-neutral-500 font-medium">Analista Técnico - Suscripción</p>
+            </div>
+            <div class="text-right shrink-0">
+              <span class="text-[11px] font-bold text-neutral-800 font-tech block">2 años 7 meses</span>
+              <span class="text-[10px] text-neutral-400 font-medium block">23 Ene 2012 – 31 Ago 2014</span>
+            </div>
+          </div>
+          <p class="text-xs text-neutral-600 leading-relaxed pt-1">
+            Análisis técnico de riesgos y validación de condiciones asegurables. Cotización, liquidación y emisión precisa de pólizas de todos los ramos. Control documental SARLAFT, auditoría de procesos y soporte operativo a intermediarios.
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 3: Inmobiliario Histórico y Consultoría -->
+      <div id="content-inmobiliario" class="tab-content hidden space-y-3">
+        <!-- Organización Inmobiliaria Fierro Díaz -->
+        <div class="bg-white p-5 rounded-2xl border border-neutral-200/90 shadow-sm space-y-2">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded uppercase">Bienes Raíces Bogotá</span>
+              <h3 class="text-sm font-bold text-neutral-900 mt-1">Organización Inmobiliaria Fierro Díaz y CIA S en CS</h3>
+              <p class="text-[11px] text-neutral-500 font-medium">Asesora Inmobiliaria Consultora Comercial</p>
+            </div>
+            <div class="text-right shrink-0">
+              <span class="text-[11px] font-bold text-neutral-800 font-tech block">2 años 6 meses</span>
+              <span class="text-[10px] text-neutral-400 font-medium block">2 Jul 2007 – 31 Dic 2009</span>
+            </div>
+          </div>
+          <p class="text-xs text-neutral-600 leading-relaxed pt-1">
+            Captación y comercialización de inmuebles residenciales y comerciales (Venta y Arriendo). Acompañamiento integral a clientes, visitas, negociación de condiciones y estructuración de ofertas. Gestión y validación documental para el cierre seguro de contratos y escrituración.
+          </p>
+        </div>
+
+        <!-- Consultoría EE. UU. -->
+        <div class="bg-white p-5 rounded-2xl border border-neutral-200/90 shadow-sm space-y-2">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded uppercase">Práctica Internacional</span>
+              <h3 class="text-sm font-bold text-neutral-900 mt-1">Consultora Independiente — Real Estate & Seguros</h3>
+              <p class="text-[11px] text-neutral-500 font-medium">Estados Unidos</p>
+            </div>
+            <div class="text-right shrink-0">
+              <span class="text-[11px] font-bold text-neutral-800 font-tech block">8 meses</span>
+              <span class="text-[10px] text-neutral-400 font-medium block">2020</span>
+            </div>
+          </div>
+          <p class="text-xs text-neutral-600 leading-relaxed pt-1">
+            Acompañamiento en procesos de preparación financiera para adquisición de vivienda, prospección de clientes y vinculación estratégica en seguros patrimoniales y comerciales.
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 4: HGI ERP e IA -->
+      <div id="content-tech" class="tab-content hidden space-y-3">
+        <!-- HGI ERP -->
+        <div class="bg-white p-5 rounded-2xl border border-neutral-200/90 shadow-sm space-y-2">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded uppercase">Tech & Operaciones</span>
+              <h3 class="text-sm font-bold text-neutral-900 mt-1">HGI ERP</h3>
+              <p class="text-[11px] text-neutral-500 font-medium">Consultora de Estrategia Digital y Operaciones • Denver, CO (Remoto)</p>
+            </div>
+            <div class="text-right shrink-0">
+              <span class="text-[11px] font-bold text-neutral-800 font-tech block">1 año 11 meses</span>
+              <span class="text-[10px] text-neutral-400 font-medium block">Ene 2024 – Nov 2025</span>
+            </div>
+          </div>
+          <p class="text-xs text-neutral-600 leading-relaxed pt-1">
+            Análisis y optimización de flujos de captación, calificación y gestión de datos para el mercado hispano en EE. UU. Integración de IA generativa para optimizar análisis técnico, documentación y eficiencia operativa.
+          </p>
+        </div>
+
+        <!-- Universidad Nacional de Colombia -->
+        <div class="bg-white p-5 rounded-2xl border border-neutral-200/90 shadow-sm space-y-2">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="text-[10px] font-bold text-stone-700 bg-stone-100 px-2 py-0.5 rounded uppercase">Institucional</span>
+              <h3 class="text-sm font-bold text-neutral-900 mt-1">Universidad Nacional de Colombia</h3>
+              <p class="text-[11px] text-neutral-500 font-medium">Publicidad y Marketing • Facultad de Medicina</p>
+            </div>
+            <div class="text-right shrink-0">
+              <span class="text-[11px] font-bold text-neutral-800 font-tech block">6 meses</span>
+              <span class="text-[10px] text-neutral-400 font-medium block">2 Ene 2007 – 30 Jun 2007</span>
+            </div>
+          </div>
+          <p class="text-xs text-neutral-600 leading-relaxed pt-1">
+            Soporte logístico y comercial en estrategias de promoción y posicionamiento de la Facultad de Medicina en ferias universitarias, stands y atención directa al público.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Botón WhatsApp de Acción Directa -->
+    <section class="pt-2">
+      <a 
+        href="https://wa.me/573114333030?text=Hola%20Lina,%20he%20visto%20tu%20perfil%20profesional" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="flex items-center justify-between w-full bg-neutral-900 text-white p-4 rounded-2xl shadow-md hover:bg-black transition-all active:scale-[0.99]"
+      >
+        <div class="flex items-center gap-3">
+          <svg class="w-4 h-4 fill-current text-emerald-400" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+          <span class="text-xs font-bold">Contactar por WhatsApp</span>
+        </div>
+        <span class="text-xs text-neutral-400 font-tech">Iniciar Conversación →</span>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full py-5 text-center text-xs text-neutral-400 border-t border-neutral-200 bg-white">
+    <p class="font-medium text-neutral-600">Lina Rachez • Perfil Profesional Independiente</p>
+    <p class="text-[10px] text-neutral-400 mt-0.5">Bogotá, Colombia • 2026</p>
+  </footer>
+
+  <!-- Script para el cambio dinámico de pestañas -->
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('active');
+        el.classList.remove('bg-neutral-900', 'text-white', 'border-neutral-900');
+        el.classList.add('bg-white', 'text-neutral-700', 'border-neutral-300');
+      });
+
+      document.getElementById('content-' + tabId).classList.remove('hidden');
+      const activeBtn = document.getElementById('tab-' + tabId);
+      activeBtn.classList.add('active');
+      activeBtn.classList.remove('bg-white', 'text-neutral-700', 'border-neutral-300');
+      activeBtn.classList.add('bg-neutral-900', 'text-white', 'border-neutral-900');
+    }
+  </script>
+
+</body>
+</html>
